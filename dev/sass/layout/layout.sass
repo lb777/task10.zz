@@ -1,0 +1,111 @@
+//Переменные
+$prefix-for-webkit:    true
+$prefix-for-mozilla:   true
+$prefix-for-microsoft: true
+$prefix-for-opera:     true
+$prefix-for-spec:      true
+
+$colorBase: #d4a964
+$colorButton: $colorBase
+$colorFon: #fff
+$colorText: #000
+$colorPhone: #c89b52
+$colorH: $colorBase
+$colorLinks: #3685de
+$colorLinksUnderline: #c1c1c1
+$colorLine: #e3e3e3
+$colorButtonShadow: #f6e9d5
+
+
+
+
+//свой mixin для FlexBox
+//css решение для FlexBox работает только в современных браузерах. Для старых версий надо использовать polyfill
+
+@mixin box-flex($display: flex,$orient: horizontal, $pack: center, $box-align: stretch, $direction: row, $justify: space-between, $align-items: stretch)
+  +display($display)
+  +box-orient($orient)
+  +box-pack($pack)
+  +box-align($box-align)
+  +flex-direction($direction)
+  +justify-content($justify)
+  +align-items($align-items)
+
+header, main, footer
+  display: block
+
+h2
+  font-weight: normal
+  color: $colorH
+
+.headerFlex
+  +outer-container
+  +box-flex($align-items: flex-end)
+  +margin(35px auto null)
+  +size(null 55px)
+
+  &>div
+    +flex(1)
+
+.navFlex
+  +outer-container
+  +margin(35px auto null)
+
+  .navUl
+    +box-flex
+
+    a
+      +flex(1)
+      +padding(8px 13px)
+      text-decoration: underline
+      color: $colorLinksUnderline
+
+      span
+        color: $colorText
+
+      &:hover
+        background-color: $colorButton
+        text-decoration: none
+        +border-bottom-radius(3px)
+        +border-top-radius(3px)
+        box-shadow: -1px 1px 0 0 $colorButtonShadow
+
+        span
+          color: #fff
+
+.line
+  +size(100% 1px)
+  background-color: $colorLine
+  margin-top: 10px
+
+.main
+  +outer-container
+  +box-flex($orient: vertical, $direction: column)
+
+  .textMain
+    +flex(1)
+    +order(2)
+    +box-flex
+
+    h2
+      +margin(20px null)
+
+    .insulation
+      +span-columns(4)
+      background: url("../image/insulation.jpg") no-repeat
+      background-position: center
+      min-height: 264px
+
+    .lorem
+      +span-columns(8)
+      +omega()
+
+  .liMain
+    +margin(80px null null)
+    +size(null 470px)
+    +flex(1)
+    +order(1)
+    display: block
+    background: url("../image/house.jpg") no-repeat
+    background-position: top center
+    position: relative
