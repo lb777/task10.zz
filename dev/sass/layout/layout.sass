@@ -9,12 +9,14 @@ $colorBase: #d4a964
 $colorButton: $colorBase
 $colorFon: #fff
 $colorText: #000
-$colorPhone: #c89b52
+$colorPhone: $colorBase
 $colorH: $colorBase
 $colorLinks: #3685de
 $colorLinksUnderline: #c1c1c1
 $colorLine: #e3e3e3
 $colorButtonShadow: #f6e9d5
+$colorBorder: #ddd
+$colorFonSometimes: #fdfcfc
 
 
 
@@ -37,16 +39,51 @@ header, main, footer
 h2
   font-weight: normal
   color: $colorH
-
+/*Шапка*/
 .headerFlex
   +outer-container
   +box-flex($align-items: flex-end)
   +margin(35px auto null)
   +size(null 55px)
 
-  &>div
-    +flex(1)
+  .logo
+    +span-columns(3)
 
+  .contact
+    +span-columns(3)
+    font-size: 18px
+    padding-left: 30px
+
+  .feedback
+    +span-columns(2)
+    +reset-layout-direction()
+
+    a
+      color: $colorLinks
+      text-decoration: underline
+
+      &:hover
+        text-decoration: none
+
+  .phone
+    +span-columns(4)
+    +omega()
+    font-size: 37px
+    color: $colorPhone
+    text-align: right
+    line-height: 1
+
+    .logoTel
+      +size(21px 27px)
+      display: inline-block
+      background: url("../image/sprite.png") no-repeat
+      +sprite-position($sprite-telHeadr)
+      margin-right: 12px
+      +hidpi(1.5) //если сайт будет открыт на устройстве поддерживающем retina, то картинка автоматически заменится
+        background: url("../image/sprite.png") no-repeat
+        background-size: 21px 27px
+
+/*Навигация*/
 .navFlex
   +outer-container
   +margin(35px auto null)
@@ -72,18 +109,17 @@ h2
 
         span
           color: #fff
-
+/*Линия*/
 .line
   +size(100% 1px)
   background-color: $colorLine
   margin-top: 10px
-
+/*Блок с основной информацией*/
 .main
   +outer-container
   +box-flex($orient: vertical, $direction: column)
 
   .textMain
-    +flex(1)
     +order(2)
     +box-flex
 
@@ -103,9 +139,350 @@ h2
   .liMain
     +margin(80px null null)
     +size(null 470px)
-    +flex(1)
     +order(1)
     display: block
     background: url("../image/house.jpg") no-repeat
     background-position: top center
     position: relative
+
+    .list
+      position: absolute
+      color: $colorLinksUnderline
+      text-decoration: underline
+
+      span
+        color: $colorText
+
+    .item1
+      bottom: 430px
+      right: 745px
+
+    .item2
+      bottom: 336px
+      right: 828px
+
+    .item3
+      bottom: 183px
+      right: 814px
+
+    .item4
+      bottom: 435px
+      left: 810px
+
+    .item5
+      bottom: 315px
+      left: 833px
+
+    .item6
+      bottom: 224px
+      left: 792px
+
+/*калькулятор*/
+.fonCalculation
+  background: url("../image/patern.jpg") repeat
+  position: relative
+  z-index: 1
+
+  .calculation
+    +outer-container
+    position: relative
+    +padding(80px null)
+
+    .formCalculation
+      background-color: $colorFon
+      text-align: center
+      +padding(40px 80px)
+      +border-bottom-radius(10px)
+      +border-top-radius(10px)
+
+      .choiceInsulation
+        +box-flex
+        +size(null 37px)
+        margin-top: 45px
+
+        &>div
+          +box-flex($align-items: center)
+
+          label
+            font-weight: normal
+            margin-right: 10px
+            margin-bottom: 0px
+
+          .styledSelect
+            background: url("../image/buttomSelect.png") no-repeat right #fafafa
+            overflow: hidden
+            border-radius: 4px
+            border: 1px solid $colorBorder
+            box-shadow: inset 0 1px 3px rgba(0,0,0,.06)
+            height: 36px
+            width: 177px
+            margin-bottom: 0
+            padding-bottom: 0
+            cursor: pointer
+
+            select
+              background: transparent
+              width: 247px
+              color: #8d8d8d
+              padding: 5px
+              font-size: 16px
+              line-height: 1
+              margin-bottom: 0
+              height: 36px
+              border: 0
+              border-radius: 0
+              -webkit-appearance: none
+              outline: none
+              cursor: pointer
+
+            &.insulation
+              width: 103px
+
+          .square
+            +size(64px 37px)
+            background-color: #fafafa
+            margin-bottom: 0
+            outline: none
+
+      .resultCalculation
+        margin-top: 40px
+        +box-flex($align-items: center)
+
+        span
+          font-size: 2em
+          color: $colorH
+
+        .resultSquare
+          text-align: left
+          +size(255px 45px)
+          border-right: 1px solid $colorLine
+
+        .resultCubic
+          text-align: center
+
+        .resultTotalAmount
+          text-align: right
+          +size(255px 45px)
+          border-left: 1px solid $colorLine
+        
+      .submitCalculation
+        margin-top: 40px
+
+      .shadow
+        +position(absolute, null -22px 22px null)
+        +size(1004px 105px)
+        z-index: -1
+        background: url("../image/sprite.png") no-repeat
+        +sprite-position($sprite-shadowForm)
+
+    .roulette
+      +size(192px 44px)
+      +position(absolute, 36px null null 29px)
+      background: url("../image/sprite.png") no-repeat
+      +sprite-position($sprite-roulette)
+
+.advantages
+  margin-top: 40px
+  +outer-container
+
+  .tabs
+    margin-top: 40px
+
+    .firstTabs, .secondTabs
+      +box-flex
+
+    .secondTabs
+      margin-top: 55px
+
+    .tabsAdvantages
+      +span-columns(4)
+      +omega(3n)
+      +padding(15px)
+      border: 1px solid $colorBorder
+      +border-bottom-radius(5px)
+      +border-top-radius(5px)
+      position: relative
+      background-color: $colorFonSometimes
+      text-align: center
+
+      h3
+        font-weight: normal
+        font-size: 1.5em
+
+      &>div
+        margin-top: 10px
+
+      &:before
+        z-index: -1
+        position: absolute
+        content: ""
+        bottom: 15px
+        left: 5px
+        width: 50%
+        top: 80%
+        max-width: 300px
+        box-shadow: 0 15px 10px #bbbbbb
+        transform: rotate(-3deg)
+
+      &:after
+        @extend :before
+        transform: rotate(3deg)
+        right: 5px
+        left: auto
+
+      .textOpacity
+        opacity: 0.7
+
+      .iconSize
+        +size(null 100px)
+
+      .iconAdvantages
+        background: url("../image/sprite.png") no-repeat
+        +margin(30px auto 20px)
+
+        &.iconNonElectric
+          +size(50px 88px)
+          +sprite-position($sprite-non-electric)
+
+        &.iconHeat
+          +size(38px 87px)
+          +sprite-position($sprite-heat)
+
+        &.iconBreathable
+          +size(74px 80px)
+          +sprite-position($sprite-breathability)
+
+        &.iconGreen
+          +size(69px 80px)
+          +sprite-position($sprite-green)
+
+        &.iconPractical
+          +size(83px 83px)
+          +sprite-position($sprite-practical)
+
+        &.iconNoSound
+          +size(104px 81px)
+          +sprite-position($sprite-soundproof)
+
+footer
+  margin-top: 40px
+  background-color: $colorFonSometimes
+  border-top: 1px solid $colorBorder
+  padding-top: 20px
+
+  .mainFooter
+
+    .menuContact
+      +outer-container
+
+      .footMenu
+        +span-columns(7)
+        +box-flex
+        text-align: justify
+        text-align-last: justify
+        height: 110px
+
+        a
+          color: #000000
+          text-decoration: underline
+
+      .footContact
+        +span-columns(5)
+        +omega()
+        height: 110px
+        text-align: right
+
+        .footCityStreet
+          opacity: 0.5
+          font-size: 1.2em
+          margin-bottom: 5px
+
+        .footIconTel
+          +size(16px 20px)
+          display: block
+          background: url("../image/sprite.png") no-repeat
+          +sprite-position($sprite-telFooter)
+          float: left
+          margin-left: 185px
+          margin-top: 10px
+          clear: both
+
+        .footTel
+          font-size: 1.6em
+          margin-bottom: 0
+
+        .footMail
+          color: $colorLinks
+          text-decoration: underline
+
+    .copyright
+      +outer-container
+      border-top: 1px solid $colorBorder
+      +padding(10px null)
+      opacity: 0.5
+
+//форма обратной связи
+
+.breadCrumbs
+  +outer-container
+  margin-top: 25px
+
+  a
+    color: $colorLinks
+    text-decoration: underline
+
+.textContact
+  +outer-container
+  margin-top: 10px
+
+  h1
+    font-weight: normal
+    color: $colorH
+
+  &>div
+    margin-top: 10px
+
+.exampleLi
+  +outer-container
+  margin-top: 40px
+
+  li
+    line-height: 2
+    padding-left: 18px
+
+    &:before
+      content: '\2014\a0 '
+      margin-left: -18px
+
+.formFeedback
+  +outer-container
+  margin-top: 40px
+
+  .formForm
+    +span-columns(6)
+
+    form
+      margin-top: 20px
+
+      p
+        +size(100% 45px)
+
+      label
+        width: 150px
+        float: left
+        text-align: right
+        padding-top: 5px
+
+      input
+        width: 300px
+        float: right
+
+      textarea
+        width: 300px
+        float: right
+
+  .nullDiv
+    +span-columns(6)
+    +omega()
+    text-align: center
+    padding-top: 150px

@@ -1,0 +1,139 @@
+/*
+  SASS variables are information about icon's compiled state, stored under its original file name
+
+  .icon-home
+    width: $icon-home-width
+
+  The large array-like variables contain all information about a single icon
+  $icon-home: x y offset_x offset_y width height total_width total_height image_path
+  */
+$sprite-breathability-x: 315px
+$sprite-breathability-y: 115px
+$sprite-breathability-offset-x: -315px
+$sprite-breathability-offset-y: -115px
+$sprite-breathability-width: 74px
+$sprite-breathability-height: 80px
+$sprite-breathability-total-width: 1004px
+$sprite-breathability-total-height: 203px
+$sprite-breathability-image: 'sprite.png'
+$sprite-breathability: 315px 115px -315px -115px 74px 80px 1004px 203px 'sprite.png'
+$sprite-green-x: 399px
+$sprite-green-y: 115px
+$sprite-green-offset-x: -399px
+$sprite-green-offset-y: -115px
+$sprite-green-width: 69px
+$sprite-green-height: 80px
+$sprite-green-total-width: 1004px
+$sprite-green-total-height: 203px
+$sprite-green-image: 'sprite.png'
+$sprite-green: 399px 115px -399px -115px 69px 80px 1004px 203px 'sprite.png'
+$sprite-heat-x: 60px
+$sprite-heat-y: 115px
+$sprite-heat-offset-x: -60px
+$sprite-heat-offset-y: -115px
+$sprite-heat-width: 38px
+$sprite-heat-height: 87px
+$sprite-heat-total-width: 1004px
+$sprite-heat-total-height: 203px
+$sprite-heat-image: 'sprite.png'
+$sprite-heat: 60px 115px -60px -115px 38px 87px 1004px 203px 'sprite.png'
+$sprite-non-electric-x: 0px
+$sprite-non-electric-y: 115px
+$sprite-non-electric-offset-x: 0px
+$sprite-non-electric-offset-y: -115px
+$sprite-non-electric-width: 50px
+$sprite-non-electric-height: 88px
+$sprite-non-electric-total-width: 1004px
+$sprite-non-electric-total-height: 203px
+$sprite-non-electric-image: 'sprite.png'
+$sprite-non-electric: 0px 115px 0px -115px 50px 88px 1004px 203px 'sprite.png'
+$sprite-practical-x: 108px
+$sprite-practical-y: 115px
+$sprite-practical-offset-x: -108px
+$sprite-practical-offset-y: -115px
+$sprite-practical-width: 83px
+$sprite-practical-height: 83px
+$sprite-practical-total-width: 1004px
+$sprite-practical-total-height: 203px
+$sprite-practical-image: 'sprite.png'
+$sprite-practical: 108px 115px -108px -115px 83px 83px 1004px 203px 'sprite.png'
+$sprite-roulette-x: 478px
+$sprite-roulette-y: 115px
+$sprite-roulette-offset-x: -478px
+$sprite-roulette-offset-y: -115px
+$sprite-roulette-width: 192px
+$sprite-roulette-height: 44px
+$sprite-roulette-total-width: 1004px
+$sprite-roulette-total-height: 203px
+$sprite-roulette-image: 'sprite.png'
+$sprite-roulette: 478px 115px -478px -115px 192px 44px 1004px 203px 'sprite.png'
+$sprite-shadowForm-x: 0px
+$sprite-shadowForm-y: 0px
+$sprite-shadowForm-offset-x: 0px
+$sprite-shadowForm-offset-y: 0px
+$sprite-shadowForm-width: 1004px
+$sprite-shadowForm-height: 105px
+$sprite-shadowForm-total-width: 1004px
+$sprite-shadowForm-total-height: 203px
+$sprite-shadowForm-image: 'sprite.png'
+$sprite-shadowForm: 0px 0px 0px 0px 1004px 105px 1004px 203px 'sprite.png'
+$sprite-soundproof-x: 201px
+$sprite-soundproof-y: 115px
+$sprite-soundproof-offset-x: -201px
+$sprite-soundproof-offset-y: -115px
+$sprite-soundproof-width: 104px
+$sprite-soundproof-height: 81px
+$sprite-soundproof-total-width: 1004px
+$sprite-soundproof-total-height: 203px
+$sprite-soundproof-image: 'sprite.png'
+$sprite-soundproof: 201px 115px -201px -115px 104px 81px 1004px 203px 'sprite.png'
+$sprite-telFooter-x: 711px
+$sprite-telFooter-y: 115px
+$sprite-telFooter-offset-x: -711px
+$sprite-telFooter-offset-y: -115px
+$sprite-telFooter-width: 16px
+$sprite-telFooter-height: 20px
+$sprite-telFooter-total-width: 1004px
+$sprite-telFooter-total-height: 203px
+$sprite-telFooter-image: 'sprite.png'
+$sprite-telFooter: 711px 115px -711px -115px 16px 20px 1004px 203px 'sprite.png'
+$sprite-telHeadr-x: 680px
+$sprite-telHeadr-y: 115px
+$sprite-telHeadr-offset-x: -680px
+$sprite-telHeadr-offset-y: -115px
+$sprite-telHeadr-width: 21px
+$sprite-telHeadr-height: 27px
+$sprite-telHeadr-total-width: 1004px
+$sprite-telHeadr-total-height: 203px
+$sprite-telHeadr-image: 'sprite.png'
+$sprite-telHeadr: 680px 115px -680px -115px 21px 27px 1004px 203px 'sprite.png'
+
+/*
+  The provided mixins are intended to be used with the array-like variables
+
+  .icon-home
+    @include sprite-width($icon-home)
+
+  .icon-email
+    @include sprite($icon-email)
+  */
+@mixin sprite-width($sprite)
+  width: nth($sprite, 5)
+
+@mixin sprite-height($sprite)
+  height: nth($sprite, 6)
+
+@mixin sprite-position($sprite)
+  $sprite-offset-x: nth($sprite, 3)
+  $sprite-offset-y: nth($sprite, 4)
+  background-position: $sprite-offset-x  $sprite-offset-y
+
+@mixin sprite-image($sprite)
+  $sprite-image: nth($sprite, 9)
+  background-image: url(#{$sprite-image})
+
+@mixin sprite($sprite)
+  @include sprite-image($sprite)
+  @include sprite-position($sprite)
+  @include sprite-width($sprite)
+  @include sprite-height($sprite)

@@ -1,3 +1,4 @@
 document.createElement('header');
 document.createElement('main');
 document.createElement('footer');
+$('input, textarea').placeholder();

@@ -58,7 +58,7 @@ gulp.task('css', function() {
 	return gulp.src('dev/sass/style.css')
 	.pipe(prefix(["last 5 version", "ie 8", "ie 7"]))
 	.pipe(uncss({
-		html: ['www/index.html']
+		html: ['www/index.html', 'www/contact.html']
 	}))
 	.pipe(cssmin())	
 	.pipe(rename({
@@ -105,7 +105,7 @@ gulp.task('sprite', function () {
                 }
   }));
   spriteData.img.pipe(gulp.dest('www/image/'));
-  spriteData.css.pipe(gulp.dest('dev/bourbon/library/'));
+  spriteData.css.pipe(gulp.dest('dev/sass/library/'));
 });
 
 // а теперь наблюдаем за происходящим =)

@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Утеплители FLAX-FLAX</title>
+        <link rel="stylesheet" href="style/style.min.css" />
+        <script src="js/libs.min.js"></script>
+        <script src="js/main.min.js"></script>
+    </head>
+    <body>
+    <header class="headerFlex">
+        <div class="logo">
+            <img src="image/logo.png" alt="flax-flax"/>
+        </div>
+        <div class="contact">
+            <span>Санкт-Петербург<br/>пр. Энгельса д.145. к3</span>
+        </div>
+        <div class="feedback">
+            <a href="mailto:flax@flax.ru">flax@flax.ru</a>
+            <a href="#">Обратный звонок</a>
+        </div>
+        <div class="phone">
+            <div class="logoTel"></div>
+            <span>812 347-35-77</span>
+        </div>
+    </header>
+    <nav class="navFlex">
+        <ul class="navUl">
+            <li class="navLi"><a href="index.html"><span>Главная</span></a></li>
+            <li class="navLi"><a href="#"><span>Новости</span></a></li>
+            <li class="navLi"><a href="#"><span>Применение</span></a></li>
+            <li class="navLi"><a href="#"><span>О утеплителе</span></a></li>
+            <li class="navLi"><a href="#"><span>Производство</span></a></li>
+            <li class="navLi"><a href="#"><span>Контакты - форма</span></a></li>
+        </ul>
+    </nav>
+    <div class="line"></div>
+    <div class="breadCrumbs"><a class="linkBrCr" href="">Главная</a>&nbsp;/&nbsp;<a class="linkBrCr" href="">Контакты - форма</a></div>
+    <!--основной блок-->
+    <main>
+        <section class="textContact">
+            <h1>Lorem ipsum.</h1>
+
+            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores facere nemo optio praesentium quam.
+                Cumque est et expedita inventore libero quasi tenetur, veritatis. Aliquam aut cumque ex explicabo harum
+                impedit in inventore ipsa nesciunt, quod! Esse ex necessitatibus nostrum officia possimus quasi veniam.
+                Ad dolor eligendi excepturi fugit illum itaque magni necessitatibus quam recusandae, saepe suscipit
+                veritatis voluptatem voluptatibus. Accusamus accusantium ad aliquam animi asperiores atque consequatur
+                consequuntur enim esse excepturi expedita facere facilis ipsum iure iusto minima nemo pariatur
+                perspiciatis quidem quis repellat soluta sunt vel veritatis, voluptate voluptatem voluptatum. Asperiores
+                earum ex ipsam labore laborum? Aperiam, eligendi quae.
+            </div>
+        </section>
+        <div class="exampleLi">
+            <h5>Пример списка</h5>
+            <ul>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Autem est mollitia natus voluptas?</li>
+                <li>Ipsam maiores perspiciatis quasi voluptate.</li>
+                <li>Deserunt explicabo libero rerum voluptate!</li>
+                <li>Fugit itaque recusandae soluta tempore.</li>
+            </ul>
+        </div>
+        <div class="formFeedback">
+            <h5>Обратная связь</h5>
+            <div class="formForm">
+                <form action="" method="get"><!-- метод get для проверки -->
+                    <p>
+                        <label for="fio">ФИО<span>*</span>:</label>
+                        <input name=name type="text" id="fio" required placeholder="ФИО" pattern="^[А-ЯЁ][а-яё]+(-[А-ЯЁ][а-яё]+)? [А-ЯЁ][а-яё]+( [А-ЯЁ][а-яё]+)?$" oninput="validateName(this)"/>
+                        <script>
+                            var valueName = $("name");
+                            function validateName(valueName) {
+                                var name = valueName.value;
+                                var patName = /^[А-ЯЁ][а-яё]+(-[А-ЯЁ][а-яё]+)? [А-ЯЁ][а-яё]+( [А-ЯЁ][а-яё]+)?$/i;
+                                if (name.length < 3) {
+                                    valueName.setCustomValidity("Минимальная длина имени должна быть более трёх символов");
+                                } else if (patName.test(name) == false){
+                                    valueName.setCustomValidity("Введите Фамилию Имя Отчество на русском языке полностью.\rВ фамилии допускается использование - !");
+                                }
+                                else {
+                                    // Если длинная соответствуе требованию, то очищаем сообщение об ошибке
+                                    valueName.setCustomValidity("");
+                                }
+                            }
+                        </script>
+                    </p>
+                    <p>
+                        <label for="organization">Организация:</label>
+                        <input name=organization type="text" id="organization" placeholder="Организация" oninput="validateOrganization(this)"/>
+                        <script>
+                            var valueOrganization = $("organization");
+                            var organization = valueOrganization.value;
+                            function validateOrganization(valueOrganization) {
+                                if (organization.length < 3) {
+                                    valueOrganization.setCustomValidity("Минимальная длина имени должна быть более трёх символов");
+                                }
+                                else {
+                                    // Если длинная соответствуе требованию, то очищаем сообщение об ошибке
+                                    valueOrganization.setCustomValidity("");
+                                }
+                            }
+                        </script>
+                    </p>
+                    <p>
+                        <label for="phone">Телефон</label>
+                        <input name=phone type="text" id="phone" placeholder="+7 (___)-___-__-__" oninput="validatePhone(this)"/>
+
+                        <script>
+                            //скрипт маски телефона
+                            $(function() {
+                                $.mask.definitions['~'] = "[+-]";
+                                $("#phone").mask("+7 (999)-999-99-99");
+                                $("input").dblclick(function() {
+                                    $(this).unmask();
+                                });
+                            });
+                        </script>
+                    </p>
+                    <p>
+                        <label for="email">E-mail<span>*</span>:</label>
+                        <input name=e-mail type="text" id="email" required placeholder="E-mail" pattern="[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" oninput="validateEmail(this)"/>
+                        <script>
+                            var valueEmail = $("e-mail");
+                            function validateEmail(valueEmail) {
+                                var email = valueEmail.value;
+                                if ( email!='') {
+                                    var t=email.indexOf('@');
+                                    var re = /[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/i;
+                                    if (re.test(email) == false) {
+                                        valueEmail.setCustomValidity('Некорректно указан email!');
+                                    } else {
+                                        // Если значение соответствуе требованию, то очищаем сообщение об ошибке
+                                        valueEmail.setCustomValidity("");
+
+                                    }
+                                }
+                            }
+                        </script>
+                    </p>
+                    <p>
+                        <label for="textMain">Тема сообщения<span>*</span></label>
+                        <input name=subject type="text" id="textMain" required placeholder="Тема сообщения" oninput="validateSubject(this)"/>
+                        <script>
+                            var valueSubject = $("subject");
+                            function validateSubject(valueSubject) {
+                                var subject = valueSubject.value;
+                                if (subject.length < 3) {
+                                    valueSubject.setCustomValidity("Минимальная длина имени должна быть более трёх символов");
+                                }
+                                else {
+                                    // Если длинная соответствуе требованию, то очищаем сообщение об ошибке
+                                    valueSubject.setCustomValidity("");
+                                }
+                            }
+                        </script>
+                    </p>
+                    <p>
+                        <label for="">Сообщение<span>*</span></label>
+                        <textarea name="" id="" cols="30" ows="10" required placeholder="Ваше сообщение"></textarea>
+                    </p>
+
+                    <p>
+                        <input type="submit" value="Отправить"/>
+                    </p>
+                </form>
+            </div>
+            <div class="nullDiv"><p><span>*</span>Поля обязательные для заполнения</p></div>
+        </div>
+        <script>
+            $('input, textarea').placeholder();
+        </script>
+    </main>
+    <footer>
+        <div class="mainFooter">
+            <div class="menuContact">
+                <div class="footMenu">
+                    <a class="footLinks1" href="index.html">Lorem.</a>
+                    <a class="footLinks2" href="#">Aut!</a>
+                    <a class="footLinks3" href="#">Provident.</a>
+                    <a class="footLinks4" href="#">Recusandae!</a>
+                    <a class="footLinks5" href="#">Ullam.</a>
+                    <a class="footLinks6" href="#">Accusamus.</a>
+                </div>
+                <div class="footContact">
+                    <p class="footCityStreet">Санкт-Петербург пр.Энгельса д.145, к.3</p>
+                    <span class="footIconTel"></span>
+                    <p class="footTel">812 347-35-77</p>
+                    <a class="footMail" href="mailto:flax@flax.ru">flax@flax.ru</a>
+                </div>
+            </div>
+            <div class="copyright">© 2014.  Все права защищены.</div>
+        </div>
+    </footer>
+    </body>
+</html>
