@@ -927,6 +927,9 @@ h2 {
   background-color: #e3e3e3;
   margin-top: 10px;
   min-width: 960px; }
+  @media screen and (max-width: 736px) {
+    .line {
+      min-width: 240px; } }
 
 /*╨С╨╗╨╛╨║ ╤Б ╨╛╤Б╨╜╨╛╨▓╨╜╨╛╨╣ ╨╕╨╜╤Д╨╛╤А╨╝╨░╤Ж╨╕╨╡╨╣ */
 .main {
@@ -1204,7 +1207,8 @@ h2 {
       background: url("../image/patern.jpg") repeat; } }
   @media screen and (max-width: 736px) {
     .fonCalculation {
-      margin-top: 20px; } }
+      margin-top: 20px;
+      min-width: 240px; } }
   .fonCalculation .calculation {
     max-width: 60em;
     margin-left: auto;
@@ -1674,6 +1678,9 @@ footer {
   border-top: 1px solid #ddd;
   padding-top: 20px;
   min-width: 960px; }
+  @media screen and (max-width: 736px) {
+    footer {
+      min-width: 240px; } }
   footer .mainFooter .menuContact {
     max-width: 60em;
     margin-left: auto;
