@@ -925,7 +925,8 @@ h2 {
   height: 1px;
   width: 100%;
   background-color: #e3e3e3;
-  margin-top: 10px; }
+  margin-top: 10px;
+  min-width: 960px; }
 
 /*╨С╨╗╨╛╨║ ╤Б ╨╛╤Б╨╜╨╛╨▓╨╜╨╛╨╣ ╨╕╨╜╤Д╨╛╤А╨╝╨░╤Ж╨╕╨╡╨╣ */
 .main {
@@ -1196,7 +1197,8 @@ h2 {
 .fonCalculation {
   background: url("../image/patern.jpg") repeat;
   position: relative;
-  z-index: 1; }
+  z-index: 1;
+  min-width: 960px; }
   @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 1.5 / 1), only screen and (min-resolution: 144dpi), only screen and (min-resolution: 1.5dppx) {
     .fonCalculation {
       background: url("../image/patern.jpg") repeat; } }
@@ -1670,7 +1672,8 @@ footer {
   margin-top: 40px;
   background-color: #fdfcfc;
   border-top: 1px solid #ddd;
-  padding-top: 20px; }
+  padding-top: 20px;
+  min-width: 960px; }
   footer .mainFooter .menuContact {
     max-width: 60em;
     margin-left: auto;
