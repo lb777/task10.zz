@@ -39,24 +39,87 @@ header, main, footer
 h2
   font-weight: normal
   color: $colorH
+  +media(max-width 414px)
+    font-size: 1.3em
+
+
+
 /*Шапка*/
+
+.topNull
+  +size(null 35px)
+  +media(max-width 240px)
+    +size(null 10px)
+
 .headerFlex
   +outer-container
+  min-width: 960px
   +box-flex($align-items: flex-end)
-  +margin(35px auto null)
+  +margin(null auto null)
   +size(null 55px)
+  +media(max-width 736px)
+    +margin(null 10px)
+    min-width: 200px
+  +media(max-width 240px)
+    +margin(null auto)
+    +box-flex($align-items: center)
+
+  .trig
+    display: none
+    +media(max-width 736px)
+      display: block
+      position: relative
+      +size(null 30px)
+      +media(max-width 240px)
+        width: 30px
+        margin-left: 10px
+
+      .menu-trigger
+        display: block
+        margin-top: -50%
+        +size(null 30px)
+        +media(max-width 240px)
+          margin-top: -10%
+
+        &:before
+          content: ''
+          position: absolute
+          cursor: pointer
+          top: 0
+          left: 0
+          width: 40px
+          height: 6px
+          background: #34495e
+          box-shadow: 0 6px #fff, 0 12px #34495e, 0 18px #fff, 0 24px #34495e
+          +media(max-width 240px)
+            width: 30px
 
   .logo
     +span-columns(3)
+    +media(max-width 736px)
+      +span-columns(12)
+      +omega()
+      text-align: center
+    +media(max-width 240px)
+      width: 70%
+      float: none
+    
+    &:last-child
+      +media(max-width 736px)
+        +margin(null auto)
 
   .contact
     +span-columns(3)
     font-size: 18px
     padding-left: 30px
+    +media(max-width 736px)
+      display: none
 
   .feedback
     +span-columns(2)
     +reset-layout-direction()
+    +media(max-width 736px)
+      display: none
 
     a
       color: $colorLinks
@@ -72,6 +135,8 @@ h2
     color: $colorPhone
     text-align: right
     line-height: 1
+    +media(max-width 736px)
+      display: none
 
     .logoTel
       +size(21px 27px)
@@ -81,12 +146,15 @@ h2
       margin-right: 12px
       +hidpi(1.5) //если сайт будет открыт на устройстве поддерживающем retina, то картинка автоматически заменится
         background: url("../image/sprite.png") no-repeat
-        background-size: 21px 27px
+        +sprite-position($sprite-telHeadr)
 
 /*Навигация*/
 .navFlex
   +outer-container
+  min-width: 960px
   +margin(35px auto null)
+  +media(max-width 736px)
+    display: none
 
   .navUl
     +box-flex
@@ -114,27 +182,54 @@ h2
   +size(100% 1px)
   background-color: $colorLine
   margin-top: 10px
+
 /*Блок с основной информацией*/
 .main
   +outer-container
+  min-width: 960px
   +box-flex($orient: vertical, $direction: column)
+  +media(max-width 736px)
+    min-width: 220px
+  +media(max-width 414px)
+    +padding(null 10px)
 
   .textMain
     +order(2)
     +box-flex
+    +media(max-width 736px)
+      margin-top: 20px
+      +padding(null 10px)
+    +media(max-width 414px)
+      +box-flex($orient: vertical, $direction: column)
+      margin-top: 0px
 
     h2
       +margin(20px null)
+      +media(max-width 414px)
+        +span-columns(12)
+        +omega()
+        text-align: center
 
     .insulation
       +span-columns(4)
       background: url("../image/insulation.jpg") no-repeat
       background-position: center
       min-height: 264px
+      +media(max-width 736px)
+        background-size: contain
+        min-height: 20px
+      +media(max-width 414px)
+        +order(2)
+        +span-columns(12)
+        +omega()
+        min-height: 150px
+
 
     .lorem
       +span-columns(8)
       +omega()
+      +media(max-width 414px)
+        +span-columns(12)
 
   .liMain
     +margin(80px null null)
@@ -144,6 +239,9 @@ h2
     background: url("../image/house.jpg") no-repeat
     background-position: top center
     position: relative
+    +media(max-width 736px)
+      display: none
+      background: none
 
     .list
       position: absolute
@@ -182,11 +280,21 @@ h2
   background: url("../image/patern.jpg") repeat
   position: relative
   z-index: 1
+  +hidpi(1.5) //если сайт будет открыт на устройстве поддерживающем retina, то картинка автоматически заменится
+    background: url("../image/patern.jpg") repeat
+  +media(max-width 736px)
+    margin-top: 20px
 
   .calculation
     +outer-container
+    min-width: 960px
     position: relative
     +padding(80px null)
+    +media(max-width 736px)
+      min-width: 220px
+      +padding(80px 10px)
+    +media(max-width 414px)
+      +padding(10px)
 
     .formCalculation
       background-color: $colorFon
@@ -194,14 +302,23 @@ h2
       +padding(40px 80px)
       +border-bottom-radius(10px)
       +border-top-radius(10px)
+      +media(max-width 414px)
+        +padding(10px)
 
       .choiceInsulation
         +box-flex
         +size(null 37px)
         margin-top: 45px
+        +media(max-width 736px)
+          display: block
+          +size(null 100%)
 
         &>div
           +box-flex($align-items: center)
+          +media(max-width 736px)
+            display: block
+            text-align: center
+            margin-top: 10px
 
           label
             font-weight: normal
@@ -219,6 +336,10 @@ h2
             margin-bottom: 0
             padding-bottom: 0
             cursor: pointer
+            +media(max-width 736px)
+              +margin(null auto)
+            +media(max-width 240px)
+              width: 160px
 
             select
               background: transparent
@@ -243,10 +364,14 @@ h2
             background-color: #fafafa
             margin-bottom: 0
             outline: none
+            +media(max-width 736px)
+              +margin(null auto)
 
       .resultCalculation
         margin-top: 40px
         +box-flex($align-items: center)
+        +media(max-width 736px)
+          display: block
 
         span
           font-size: 2em
@@ -256,6 +381,10 @@ h2
           text-align: left
           +size(255px 45px)
           border-right: 1px solid $colorLine
+          +media(max-width 736px)
+            border: none
+            text-align: center
+            +size(100% null)
 
         .resultCubic
           text-align: center
@@ -264,6 +393,10 @@ h2
           text-align: right
           +size(255px 45px)
           border-left: 1px solid $colorLine
+          +media(max-width 736px)
+            border: none
+            text-align: center
+            +size(100% null)
         
       .submitCalculation
         margin-top: 40px
@@ -274,25 +407,47 @@ h2
         z-index: -1
         background: url("../image/sprite.png") no-repeat
         +sprite-position($sprite-shadowForm)
+        +media(max-width 1003px)
+          display: none
+          background: none
 
     .roulette
       +size(192px 44px)
       +position(absolute, 36px null null 29px)
       background: url("../image/sprite.png") no-repeat
       +sprite-position($sprite-roulette)
+      +media(max-width 414px)
+        display: none
+        background: none
 
 .advantages
   margin-top: 40px
   +outer-container
+  min-width: 960px
+  +media(max-width 736px)
+    min-width: 220px
+    +padding(null 10px)
+  +media(max-width 414px)
+    text-align: center
+    +margin(10px auto)
 
   .tabs
     margin-top: 40px
+    +media(max-width 414px)
+      margin-top: 10px
 
     .firstTabs, .secondTabs
       +box-flex
+      +media(max-width 414px)
+        display: block
+        +margin(null auto)
+        +span-columns(12)
+        +omega()
 
     .secondTabs
       margin-top: 55px
+      +media(max-width 414px)
+        margin-top: 0
 
     .tabsAdvantages
       +span-columns(4)
@@ -304,6 +459,14 @@ h2
       position: relative
       background-color: $colorFonSometimes
       text-align: center
+      +media(max-width 414px)
+        +margin(null auto 20px)
+        width: 90%
+        float: none
+
+      &:nth-child(3n)
+        +media(max-width 414px)
+          margin-right: auto
 
       h3
         font-weight: normal
@@ -343,26 +506,38 @@ h2
         &.iconNonElectric
           +size(50px 88px)
           +sprite-position($sprite-non-electric)
+          +hidpi(1.5) //если сайт будет открыт на устройстве поддерживающем retina, то картинка автоматически заменится
+            +sprite-position($sprite-non-electric)
 
         &.iconHeat
           +size(38px 87px)
           +sprite-position($sprite-heat)
+          +hidpi(1.5) //если сайт будет открыт на устройстве поддерживающем retina, то картинка автоматически заменится
+            +sprite-position($sprite-heat)
 
         &.iconBreathable
           +size(74px 80px)
           +sprite-position($sprite-breathability)
+          +hidpi(1.5) //если сайт будет открыт на устройстве поддерживающем retina, то картинка автоматически заменится
+            +sprite-position($sprite-breathability)
 
         &.iconGreen
           +size(69px 80px)
           +sprite-position($sprite-green)
+          +hidpi(1.5) //если сайт будет открыт на устройстве поддерживающем retina, то картинка автоматически заменится
+            +sprite-position($sprite-green)
 
         &.iconPractical
           +size(83px 83px)
           +sprite-position($sprite-practical)
+          +hidpi(1.5) //если сайт будет открыт на устройстве поддерживающем retina, то картинка автоматически заменится
+            +sprite-position($sprite-practical)
 
         &.iconNoSound
           +size(104px 81px)
           +sprite-position($sprite-soundproof)
+          +hidpi(1.5) //если сайт будет открыт на устройстве поддерживающем retina, то картинка автоматически заменится
+            +sprite-position($sprite-soundproof)
 
 footer
   margin-top: 40px
@@ -374,6 +549,12 @@ footer
 
     .menuContact
       +outer-container
+      min-width: 960px
+      +media(max-width 736px)
+        min-width: 414px
+        +padding(null 10px)
+      +media(max-width 414px)
+        display: none
 
       .footMenu
         +span-columns(7)
@@ -381,6 +562,9 @@ footer
         text-align: justify
         text-align-last: justify
         height: 110px
+        +media(max-width 736px)
+          font-size: 0.8em
+          display: block
 
         a
           color: #000000
@@ -396,35 +580,51 @@ footer
           opacity: 0.5
           font-size: 1.2em
           margin-bottom: 5px
+          +media(max-width 736px)
+            font-size: 0.8em
 
         .footIconTel
           +size(16px 20px)
           display: block
           background: url("../image/sprite.png") no-repeat
           +sprite-position($sprite-telFooter)
+          +hidpi(1.5) //если сайт будет открыт на устройстве поддерживающем retina, то картинка автоматически заменится
+            +sprite-position($sprite-telFooter)
           float: left
           margin-left: 185px
           margin-top: 10px
           clear: both
+          +media(max-width 736px)
+            background: none
+            display: none
 
         .footTel
           font-size: 1.6em
           margin-bottom: 0
+          +media(max-width 736px)
+            font-size: 0.9em
 
         .footMail
           color: $colorLinks
           text-decoration: underline
+          +media(max-width 736px)
+            font-size: 0.8em
 
     .copyright
       +outer-container
+      min-width: 960px
       border-top: 1px solid $colorBorder
       +padding(10px null)
       opacity: 0.5
+      +media(max-width 736px)
+        min-width: 220px
+        font-size: 0.9em
 
 //форма обратной связи
 
 .breadCrumbs
   +outer-container
+  min-width: 960px
   margin-top: 25px
 
   a
@@ -433,6 +633,7 @@ footer
 
 .textContact
   +outer-container
+  min-width: 960px
   margin-top: 10px
 
   h1
@@ -444,6 +645,7 @@ footer
 
 .exampleLi
   +outer-container
+  min-width: 960px
   margin-top: 40px
 
   li
@@ -456,6 +658,7 @@ footer
 
 .formFeedback
   +outer-container
+  min-width: 960px
   margin-top: 40px
 
   .formForm
@@ -486,3 +689,5 @@ footer
     +omega()
     text-align: center
     padding-top: 150px
+
+@import "component"

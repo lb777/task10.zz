@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Утеплители FLAX-FLAX</title>
+        <link rel="stylesheet" href="style/style.min.css" />
+        <link rel="stylesheet" href="style/component.css" />
+        <script src="js/libs.min.js"></script>
+        <script src="js/main.min.js"></script>
+</head>
+    <body>
+    <div class="container">
+        <!-- Push Wrapper -->
+        <div class="mp-pusher" id="mp-pusher">
+
+            <!-- mp-menu -->
+            <nav id="mp-menu" class="mp-menu">
+                <div class="mp-level">
+                    <ul class="navUl">
+                        <li class="navLi"><a href="#"><span>Главная</span></a></li>
+                        <li class="navLi"><a href="#"><span>Новости</span></a></li>
+                        <li class="navLi"><a href="#"><span>Применение</span></a></li>
+                        <li class="navLi"><a href="#"><span>О утеплителе</span></a></li>
+                        <li class="navLi"><a href="#"><span>Производство</span></a></li>
+                        <li class="navLi"><a href="contact.html"><span>Контакты - форма</span></a></li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- /mp-menu -->
+
+            <div class="scroller"><!-- this is for emulating position fixed of the nav -->
+                <div class="scroller-inner">
+                    <!-- Top Navigation -->
+                    <div class="codrops-top clearfix">
+                        <a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Tutorials/CircularNavigation/"><span>Previous Demo</span></a>
+                        <span class="right"><a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=16252"><span>Back to the Codrops Article</span></a></span>
+                    </div>
+                    <header class="codrops-header">
+                        <h1>Multi-Level Push Menu <span>Off-screen navigation with multiple levels</span></h1>
+                    </header>
+                    <div class="content clearfix">
+                        <div class="block block-40 clearfix">
+                            <p><a href="#" id="trigger" class="menu-trigger">Open/Close Menu</a></p>
+                            <nav class="codrops-demos">
+                                <a class="current-demo" href="index.html">Demo 1: Overlapping levels</a>
+                                <a href="index2.html">Demo 2: Covering levels</a>
+                                <a href="index3.html">Demo 3: Overlapping levels with back links</a>
+                            </nav>
+                        </div>
+                        <div class="block block-60">
+                            <p><strong>Demo 1:</strong> Overlapping levels</p>
+                            <p>This menu will open by pushing the website content to the right. It has multi-level functionality, allowing endless nesting of navigation elements.</p>
+                            <p>The next level can optionally overlap or cover the previous one.</p>
+                        </div>
+                    </div>
+                </div><!-- /scroller-inner -->
+            </div><!-- /scroller -->
+
+        </div><!-- /pusher -->
+    </div><!-- /container -->
+    <script src="js/classie.js"></script>
+    <script src="js/mlpushmenu.js"></script>
+    <script>
+        new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ) );
+    </script>
+    </body>
+
+</html>

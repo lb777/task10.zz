@@ -1,80 +1,82 @@
-<!doctype html><html lang=ru><head><meta charset=UTF-8><title>Утеплители FLAX-FLAX</title><link rel=stylesheet href=style/style.min.css><script src=js/libs.min.js></script><script src=js/main.min.js></script></head><body><header class=headerFlex><div class=logo><img src=image/logo.png alt=flax-flax></div><div class=contact><span>Санкт-Петербург<br>пр. Энгельса д.145. к3</span></div><div class=feedback><a href=mailto:flax@flax.ru>flax@flax.ru</a> <a href=#>Обратный звонок</a></div><div class=phone><div class=logoTel></div><span>812 347-35-77</span></div></header><nav class=navFlex><ul class=navUl><li class=navLi><a href=#><span>Главная</span></a></li><li class=navLi><a href=#><span>Новости</span></a></li><li class=navLi><a href=#><span>Применение</span></a></li><li class=navLi><a href=#><span>О утеплителе</span></a></li><li class=navLi><a href=#><span>Производство</span></a></li><li class=navLi><a href=contact.html><span>Контакты - форма</span></a></li></ul></nav><div class=line></div><main><div class=main><section class=textMain><div class=insulation></div><div class=lorem><h2>Утеплитель от 200 руб./м2</h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At commodi consequatur consequuntur deserunt dolorum, enim eum excepturi fugiat id itaque nam necessitatibus neque, numquam odit optio perferendis placeat, porro quisquam sunt voluptate? Iusto, necessitatibus, voluptas? Beatae commodi explicabo facilis itaque iusto magnam minima natus necessitatibus non placeat quas, quasi voluptates.</div></section><ul class=liMain><li class="list item1"><span>Межэтажные перекрытия</span></li><li class="list item2"><span>Каркасные стены</span></li><li class="list item3"><span>Наружные стены</span></li><li class="list item4"><span>Крыши мансарды</span></li><li class="list item5"><span>Внутренние перегородки</span></li><li class="list item6"><span>Пол</span></li></ul></div><div class=fonCalculation><div class=calculation><div class=formCalculation><h2>Расчитать стоимость</h2><form method=get><div class=choiceInsulation><div class=blockTypeInsulation><label for=typeInsulation>Вид утеплителя</label><div class=styledSelect><select name=type_insulation id=typeInsulation required=required onchange=calc()><option disabled="" selected="">Название</option><option value=250>Твёрдый</option><option value=50>Волокнистый</option><option value=500>Жидкий</option><option value=300>Ватный</option></select></div></div><div class=blockSquare><label for=square>Площадь, м<sup>2</sup></label><input type=text name=square id=square class=square required="" placeholder=0 pattern=[0-9]{1,99999999999999}$ onchange=calc() oninput=validateSquare(this)><script>
-                                    var valueSquare = $("square");
-                                    function validateSquare(valueSquare) {
-                                        var square = valueSquare.value;
-                                        if ( square!='') {
-                                            var re = /[0-9]{1,99999999999999}/i;
-                                            if (re.test(square) == false) {
-                                                valueSquare.setCustomValidity('Укажите только цифры!');
-                                            } else {
-                                                // Если значение соответствуе требованию, то очищаем сообщение об ошибке
-                                                valueSquare.setCustomValidity("");
+<!doctype html><html lang=ru><head><meta charset=UTF-8><title>Утеплители FLAX-FLAX</title><link rel=stylesheet href=style/style.min.css><script src=js/libs.min.js></script><script src=js/main.min.js></script><script src=js/modernizr.custom.js></script></head><body><div class=container><div class=mp-pusher id=mp-pusher><nav id=mp-menu class=mp-menu><div class=mp-level><ul class=navUl><li class=navLi><a href=#><span>Главная</span></a></li><li class=navLi><a href=#><span>Новости</span></a></li><li class=navLi><a href=#><span>Применение</span></a></li><li class=navLi><a href=#><span>О утеплителе</span></a></li><li class=navLi><a href=#><span>Производство</span></a></li><li class=navLi><a href=contact.html><span>Контакты - форма</span></a></li></ul></div></nav><div class=scroller><div class=scroller-inner><div class=topNull></div><header class=headerFlex><div class=trig><a href=# class=menu-trigger id=trigger></a></div><script>
+                    new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ) );
+                </script><div class=logo><img src=image/logo.png alt=flax-flax></div><div class=contact><span>Санкт-Петербург<br>пр. Энгельса д.145. к3</span></div><div class=feedback><a href=mailto:flax@flax.ru>flax@flax.ru</a> <a href=#>Обратный звонок</a></div><div class=phone><div class=logoTel></div><span>812 347-35-77</span></div></header><nav class=navFlex><ul class=navUl><li class=navLi><a href=#><span>Главная</span></a></li><li class=navLi><a href=#><span>Новости</span></a></li><li class=navLi><a href=#><span>Применение</span></a></li><li class=navLi><a href=#><span>О утеплителе</span></a></li><li class=navLi><a href=#><span>Производство</span></a></li><li class=navLi><a href=contact.html><span>Контакты - форма</span></a></li></ul></nav><div class=line></div><main><div class=main><section class=textMain><div class=insulation></div><div class=lorem><h2>Утеплитель от 200 руб./м2</h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At commodi consequatur consequuntur deserunt dolorum, enim eum excepturi fugiat id itaque nam necessitatibus neque, numquam odit optio perferendis placeat, porro quisquam sunt voluptate? Iusto, necessitatibus, voluptas? Beatae commodi explicabo facilis itaque iusto magnam minima natus necessitatibus non placeat quas, quasi voluptates.</div></section><ul class=liMain><li class="list item1"><span>Межэтажные перекрытия</span></li><li class="list item2"><span>Каркасные стены</span></li><li class="list item3"><span>Наружные стены</span></li><li class="list item4"><span>Крыши мансарды</span></li><li class="list item5"><span>Внутренние перегородки</span></li><li class="list item6"><span>Пол</span></li></ul></div><div class=fonCalculation><div class=calculation><div class=formCalculation><h2>Расчитать стоимость</h2><form method=get><div class=choiceInsulation><div class=blockTypeInsulation><label for=typeInsulation>Вид утеплителя</label><div class=styledSelect><select name=type_insulation id=typeInsulation required=required onchange=calc()><option disabled="" selected="">Название</option><option value=250>Твёрдый</option><option value=50>Волокнистый</option><option value=500>Жидкий</option><option value=300>Ватный</option></select></div></div><div class=blockSquare><label for=square>Площадь, м<sup>2</sup></label><input type=text name=square id=square class=square required="" placeholder=0 pattern=\d* novalidate="" onchange=calc() oninput=validateSquare(this) autocapitalize=off autocorrect=off><script>
+                                            var valueSquare = $("square");
+                                            function validateSquare(valueSquare) {
+                                                var square = valueSquare.value;
+                                                if ( square!='') {
+                                                    var re = /\d*/i;
+                                                    if (re.test(square) == false) {
+                                                        valueSquare.setCustomValidity('Укажите только цифры!');
+                                                    } else {
+                                                        // Если значение соответствуе требованию, то очищаем сообщение об ошибке
+                                                        valueSquare.setCustomValidity("");
 
+                                                    }
+                                                }
                                             }
-                                        }
+                                        </script></div><div class=blockWidthInsulation><label for=widthInsulation>Толщина утеплителя</label><div class="styledSelect insulation"><select name=width_insulation id=widthInsulation onchange=calc()><option selected=selected value=28>28 мм</option><option value=32>32 мм</option><option value=36>36 мм</option><option value=40>40 мм</option><option value=44>44 мм</option></select></div></div></div><div class=resultCalculation><div class=resultSquare>Цена за м2: <span id=priced2>0</span><span>&nbsp;руб.</span></div><div class=resultCubic>Цена за м3: <span id=priced3>0</span><span>&nbsp;руб.</span></div><div class=resultTotalAmount>Итого: <span id=totalAmount>0</span><span>&nbsp;руб.</span></div></div><input type=submit value=Заказать class=submitCalculation></form><script type=text/javascript>
+                                function calc() {
+                                    var typeInsulation = document.getElementById("typeInsulation");
+                                    var square = document.getElementById("square");
+                                    var widthInsulation = document.getElementById("widthInsulation");
+
+                                    var priceAmount = 0;
+                                    var price2 = 0;
+                                    var price3 = 0;
+
+                                    switch (parseInt(typeInsulation.options[typeInsulation.selectedIndex].value)) {
+                                        case 250:
+                                            price2 = 250;
+                                            price3 = 250;
+                                            break
+                                        case 50:
+                                            price2 = 50;
+                                            price3 = 150;
+                                            break
+                                        case 500:
+                                            price2 = 500;
+                                            price3 = 600;
+                                            break
+                                        case 300:
+                                            price2 = 300;
+                                            price3 = 400;
+                                            break
+                                        default:
+                                            price2 = 0;
+                                            price3 = 0;
                                     }
-                                </script></div><div class=blockWidthInsulation><label for=widthInsulation>Толщина утеплителя</label><div class="styledSelect insulation"><select name=width_insulation id=widthInsulation onchange=calc()><option selected=selected value=28>28 мм</option><option value=32>32 мм</option><option value=36>36 мм</option><option value=40>40 мм</option><option value=44>44 мм</option></select></div></div></div><div class=resultCalculation><div class=resultSquare>Цена за м2: <span id=priced2>0</span><span>&nbsp;руб.</span></div><div class=resultCubic>Цена за м3: <span id=priced3>0</span><span>&nbsp;руб.</span></div><div class=resultTotalAmount>Итого: <span id=totalAmount>0</span><span>&nbsp;руб.</span></div></div><input type=submit value=Заказать class=submitCalculation></form><script type=text/javascript>
-                        function calc() {
-                            var typeInsulation = document.getElementById("typeInsulation");
-                            var square = document.getElementById("square");
-                            var widthInsulation = document.getElementById("widthInsulation");
 
-                            var priceAmount = 0;
-                            var price2 = 0;
-                            var price3 = 0;
+                                    switch (parseInt(widthInsulation.options[widthInsulation.selectedIndex].value)) {
+                                        case 28:
+                                            price3 *= 1.3;
+                                            break
+                                        case 32:
+                                            price3 *= 6;
+                                            break
+                                        case 36:
+                                            price3 *= 3;
+                                            break
+                                        case 40:
+                                            price3 *= 5;
+                                            break
+                                        case 44:
+                                            price3 *= 4;
+                                            break
+                                        default:
+                                            price3 *= 0;
+                                    }
 
-                            switch (parseInt(typeInsulation.options[typeInsulation.selectedIndex].value)) {
-                                case 250:
-                                    price2 = 250;
-                                    price3 = 250;
-                                    break
-                                case 50:
-                                    price2 = 50;
-                                    price3 = 150;
-                                    break
-                                case 500:
-                                    price2 = 500;
-                                    price3 = 600;
-                                    break
-                                case 300:
-                                    price2 = 300;
-                                    price3 = 400;
-                                    break
-                                default:
-                                    price2 = 0;
-                                    price3 = 0;
-                            }
+                                    if (parseInt(square.value)) {
+                                        priceAmount = price3 * parseInt(square.value);
+                                    }
 
-                            switch (parseInt(widthInsulation.options[widthInsulation.selectedIndex].value)) {
-                                case 28:
-                                    price3 *= 1.3;
-                                    break
-                                case 32:
-                                    price3 *= 6;
-                                    break
-                                case 36:
-                                    price3 *= 3;
-                                    break
-                                case 40:
-                                    price3 *= 5;
-                                    break
-                                case 44:
-                                    price3 *= 4;
-                                    break
-                                default:
-                                    price3 *= 0;
-                            }
+                                    var priceds2 = document.getElementById("priced2");
+                                    var priceds3 = document.getElementById("priced3");
+                                    var totalAmount = document.getElementById("totalAmount");
 
-                            if (parseInt(square.value)) {
-                                priceAmount = price3 * parseInt(square.value);
-                            }
-
-                            var priceds2 = document.getElementById("priced2");
-                            var priceds3 = document.getElementById("priced3");
-                            var totalAmount = document.getElementById("totalAmount");
-
-                            priceds2.innerHTML = price2;
-                            priceds3.innerHTML = price3;
-                            totalAmount.innerHTML = priceAmount;
-                        }
-                    </script><div class=shadow></div></div><div class=roulette></div></div></div><div class=advantages><h2>Приемущества</h2><div class=tabs><div class=firstTabs><section class=tabsAdvantages><div class=iconSize><div class="iconAdvantages iconNonElectric"></div></div><h3>Lorem.</h3><div class=textOpacity>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid beatae dolore eum pariatur, voluptatem! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid beatae dolore eum pariatur, voluptatem! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid beatae dolore eum pariatur, voluptatem!</div></section><section class=tabsAdvantages><div class=iconSize><div class="iconAdvantages iconHeat"></div></div><h3>Unde?</h3><div class=textOpacity>Aut dolore exercitationem magnam nihil, rerum ullam. Cumque delectus labore odio, quaerat quia reiciendis similique!</div></section><section class=tabsAdvantages><div class=iconSize><div class="iconAdvantages iconBreathable"></div></div><h3>Facilis?</h3><div class=textOpacity>Ad asperiores dolor eum incidunt ipsa, laboriosam molestias nam quidem recusandae reiciendis, rem reprehenderit voluptatem!</div></section></div><div class=secondTabs><section class=tabsAdvantages><div class=iconSize><div class="iconAdvantages iconGreen"></div></div><h3>Delectus.</h3><div class=textOpacity>Aliquam asperiores dolore ea facere fugit inventore libero maiores mollitia neque quibusdam soluta tempore, totam.</div></section><section class=tabsAdvantages><div class=iconSize><div class="iconAdvantages iconPractical"></div></div><h3>Velit!</h3><div class=textOpacity>Accusantium at, atque cumque dolore eveniet, harum iure minus odio repellendus, sed suscipit ullam voluptates! Aliquam asperiores dolore ea facere fugit inventore libero maiores mollitia neque quibusdam soluta tempore, totam.</div></section><section class=tabsAdvantages><div class=iconSize><div class="iconAdvantages iconNoSound"></div></div><h3>Quo?</h3><div class=textOpacity>Accusantium aperiam beatae magni nisi quo tempora! Debitis, quam ullam</div></section></div></div></div></main><footer><div class=mainFooter><div class=menuContact><div class=footMenu><a class=footLinks1 href=#>Lorem.</a> <a class=footLinks2 href=#>Aut!</a> <a class=footLinks3 href=#>Provident.</a> <a class=footLinks4 href=#>Recusandae!</a> <a class=footLinks5 href=#>Ullam.</a> <a class=footLinks6 href=contact.html>Контакты - форма</a></div><div class=footContact><p class=footCityStreet>Санкт-Петербург пр.Энгельса д.145, к.3</p><span class=footIconTel></span><p class=footTel>812 347-35-77</p><a class=footMail href=mailto:flax@flax.ru>flax@flax.ru</a></div></div><div class=copyright>© 2014. Все права защищены.</div></div></footer></body></html>
+                                    priceds2.innerHTML = price2;
+                                    priceds3.innerHTML = price3;
+                                    totalAmount.innerHTML = priceAmount;
+                                }
+                            </script><div class=shadow></div></div><div class=roulette></div></div></div><div class=advantages><h2>Приемущества</h2><div class=tabs><div class=firstTabs><section class=tabsAdvantages><div class=iconSize><div class="iconAdvantages iconNonElectric"></div></div><h3>Lorem.</h3><div class=textOpacity>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid beatae dolore eum pariatur, voluptatem! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid beatae dolore eum pariatur, voluptatem! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid beatae dolore eum pariatur, voluptatem!</div></section><section class=tabsAdvantages><div class=iconSize><div class="iconAdvantages iconHeat"></div></div><h3>Unde?</h3><div class=textOpacity>Aut dolore exercitationem magnam nihil, rerum ullam. Cumque delectus labore odio, quaerat quia reiciendis similique!</div></section><section class=tabsAdvantages><div class=iconSize><div class="iconAdvantages iconBreathable"></div></div><h3>Facilis?</h3><div class=textOpacity>Ad asperiores dolor eum incidunt ipsa, laboriosam molestias nam quidem recusandae reiciendis, rem reprehenderit voluptatem!</div></section></div><div class=secondTabs><section class=tabsAdvantages><div class=iconSize><div class="iconAdvantages iconGreen"></div></div><h3>Delectus.</h3><div class=textOpacity>Aliquam asperiores dolore ea facere fugit inventore libero maiores mollitia neque quibusdam soluta tempore, totam.</div></section><section class=tabsAdvantages><div class=iconSize><div class="iconAdvantages iconPractical"></div></div><h3>Velit!</h3><div class=textOpacity>Accusantium at, atque cumque dolore eveniet, harum iure minus odio repellendus, sed suscipit ullam voluptates! Aliquam asperiores dolore ea facere fugit inventore libero maiores mollitia neque quibusdam soluta tempore, totam.</div></section><section class=tabsAdvantages><div class=iconSize><div class="iconAdvantages iconNoSound"></div></div><h3>Quo?</h3><div class=textOpacity>Accusantium aperiam beatae magni nisi quo tempora! Debitis, quam ullam</div></section></div></div></div></main><footer><div class=mainFooter><div class=menuContact><div class=footMenu><a class=footLinks1 href=#>Lorem.</a> <a class=footLinks2 href=#>Aut!</a> <a class=footLinks3 href=#>Provident.</a> <a class=footLinks4 href=#>Recusandae!</a> <a class=footLinks5 href=#>Ullam.</a> <a class=footLinks6 href=contact.html>Контакты - форма</a></div><div class=footContact><p class=footCityStreet>Санкт-Петербург пр.Энгельса д.145, к.3</p><span class=footIconTel></span><p class=footTel>812 347-35-77</p><a class=footMail href=mailto:flax@flax.ru>flax@flax.ru</a></div></div><div class=copyright>© 2014. Все права защищены.</div></div></footer></div></div></div></div></body></html>

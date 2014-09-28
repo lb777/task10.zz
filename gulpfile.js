@@ -57,9 +57,9 @@ gulp.task('libs', function () {
 gulp.task('css', function() {
 	return gulp.src('dev/sass/style.css')
 	.pipe(prefix(["last 5 version", "ie 8", "ie 7"]))
-	.pipe(uncss({
+	/*.pipe(uncss({
 		html: ['www/index.html', 'www/contact.html']
-	}))
+	}))*/
 	.pipe(cssmin())	
 	.pipe(rename({
         suffix: ".min"
@@ -71,7 +71,7 @@ gulp.task('css', function() {
 // js. Минифицирует и склеивает
 
 gulp.task('js', function () {
-	return gulp.src('dev/javascript')
+	return gulp.src('dev/javascript/*.js')
 	.pipe(concat('main.js'))
 	.pipe(uglify())
 	.pipe(rename({
