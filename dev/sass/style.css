@@ -929,7 +929,7 @@ h2 {
   min-width: 960px; }
   @media screen and (max-width: 736px) {
     .line {
-      min-width: 240px; } }
+      min-width: 220px; } }
 
 /*╨С╨╗╨╛╨║ ╤Б ╨╛╤Б╨╜╨╛╨▓╨╜╨╛╨╣ ╨╕╨╜╤Д╨╛╤А╨╝╨░╤Ж╨╕╨╡╨╣ */
 .main {
@@ -1208,7 +1208,7 @@ h2 {
   @media screen and (max-width: 736px) {
     .fonCalculation {
       margin-top: 20px;
-      min-width: 240px; } }
+      min-width: 220px; } }
   .fonCalculation .calculation {
     max-width: 60em;
     margin-left: auto;
@@ -1680,7 +1680,7 @@ footer {
   min-width: 960px; }
   @media screen and (max-width: 736px) {
     footer {
-      min-width: 240px; } }
+      min-width: 220px; } }
   footer .mainFooter .menuContact {
     max-width: 60em;
     margin-left: auto;
